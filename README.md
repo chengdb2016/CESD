@@ -13,7 +13,8 @@ For equires, please send e-mail: Debo.Cheng@unisa.edu.au
  
 # Code for KDRcpp
 #install package devtools if necessary
- devtools::install_github('aschmu/KDRcpp')
+
+devtools::install_github('aschmu/KDRcpp')
  
 
 
