@@ -1,6 +1,6 @@
 ######### The codes are for the paper: 
-"Discovering ancestral instrumental variables for causal inference from observational data" 
-Anonymous Author(s).
+"Sufficient Dimension Reduction for Average Causal Effect Estimation" 
+Debo Cheng \and Jiuyong Li  \and Lin Liu and Thuc Duy Le and Jixue Liu and Kui Yu
 
 # Codes: the AIV.GT algorithm
 *AIV.GT
