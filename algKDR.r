@@ -3,8 +3,8 @@ algKDR <- function(dat, p=2, max_loop=20){
   # dat includes, x: covariates, Tr: treatment variable, Y: outcome
   # p #target reduced dimensions
   # max_loop     #number of iterations in kdr method
- require(KDRcpp)
-  #install package devtools if necessary
+  require(KDRcpp)
+  ##install package devtools if necessary
   #devtools::install_github('aschmu/KDRcpp')
   
   
@@ -16,11 +16,9 @@ X <- data.matrix(dat[,-c(ns-1,ns)])
 Tr <- as.matrix(dat$Tr,ncol=1,nrow=m);
 Y<-as.matrix(dat$Y,ncol=1,nrow=m);
 
- 
- 
 starttime<-proc.time()
 # p <- 2 #target reduced dimension
-
+  
 Xs <- scale(X)
 sx <- 5
 sy <- 1.4
@@ -51,11 +49,4 @@ retu<-list(rx,B,Runtime)
 names(retu) <- c("rx","B","Runtime")
 
 return(retu)
-}
-
-Cal_bias<-function(Estimate_value,True_value){
-  
-  Bias <- abs(abs(Estimate_value-True_value)/True_value)*100
-  
-  return(Bias)
 }
