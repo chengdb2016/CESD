@@ -1,5 +1,6 @@
 algKDR <- function(dat, p=2, max_loop=20){
-  #Code by Debo Cheng
+  # Code by Debo Cheng
+  # The function of CESD algorithm
   # dat includes, x: covariates, Tr: treatment variable, Y: outcome
   # p #target reduced dimensions
   # max_loop     #number of iterations in kdr method
