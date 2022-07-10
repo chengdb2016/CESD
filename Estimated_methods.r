@@ -1,5 +1,8 @@
-################The codes are modified the original codes from Janine Witte's work ##################
+################ The codes are modified the original codes from Janine Witte's work ##################
 ###   If you use the code, please cite the two works.
+# [1] Cheng D, Li J, Liu L, et al. Sufficient dimension reduction for average causal effect estimation[J]. Data Mining and Knowledge Discovery, 2022, 36(3): 1174-1196.
+# [2] Witte J, Didelez V. Covariate selection strategies for causal inference: Classification and comparison[J]. Biometrical Journal, 2019, 61(5): 1270-1289.
+# Modified by Debo Cheng.
 ####################################  ########################################
 
 est_reg_con<-function(adjset,obs){
@@ -63,14 +66,6 @@ est_matchit_con<-function(adjset,obs, method = "subclasss", subclass=6){
       m.out <- matchit(fmla1, data = obs, method = "subclass", subclass = subclass)
       # learest square regression for con outcome
       zmodel.out<-zelig(fmla2, data=match.data(m.out), model = "ls", cite = FALSE, by="subclass")
-      # if(all(!is.na(zmodel.out$get_coef()[[subclass]]))){
-      # control.out<-setx(zmodel.out,Tr=0) #control
-      # treat.out<-setx(zmodel.out,Tr=1) #Tread
-      # s.out<-sim(zmodel.out, x = control.out, x1 = treat.out)
-      # }else{
-      #  
-      # }
-      #zmodel.out<-zelig(fmla2,data=match.data(m.out), model = "ls", cite = FALSE)
       control.out<-setx(zmodel.out,Tr=0) #control
       treat.out<-setx(zmodel.out,Tr=1) #Tread
       s.out<-sim(zmodel.out, x = control.out, x1 = treat.out)          
