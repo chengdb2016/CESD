@@ -9,12 +9,11 @@ For equires, please send e-mail: Debo.Cheng@unisa.edu.au
 
 # Codes: the CESD algorithm
 *algKDR.R
+*Estimators.R
  
 # Code for KDRcpp
 #install package devtools if necessary
  devtools::install_github('aschmu/KDRcpp')
-
-# Demo
-*Demo_Catteno2_CSDE.R
+ 
 
 
